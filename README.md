@@ -1,10 +1,10 @@
 # My bash docker aliases
 
 ## Inspired By
-[https://github.com/tcnksm/docker-alias]
+https://github.com/tcnksm/docker-alias
 
 ## How to include
-In `.bash_profile` file:
+Edit file `.bash_profile` and add this:
 ```
 if [ -f ~/.docker_aliases ]; then
     . ~/.docker_aliases
@@ -12,7 +12,7 @@ fi
 ```
 
 ## Docker Aliases
-Then, in `.docker_aliases` file:
+Then, create `.docker_aliases` and put this content:
 ```
 # Docker alias
 alias dk="docker"
