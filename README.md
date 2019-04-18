@@ -1,2 +1,44 @@
-# bash-docker-aliases
-My Bash Docker Aliases
+# My bash docker aliases
+
+## Inspired By
+[https://github.com/tcnksm/docker-alias]
+
+## How to include
+In `.bash_profile` file:
+```
+if [ -f ~/.docker_aliases ]; then
+    . ~/.docker_aliases
+fi
+```
+
+## Docker Aliases
+Then, in `.docker_aliases` file:
+```
+# Docker alias
+alias dk="docker"
+
+# Get latest container ID
+alias dkl="docker ps -l -q"
+
+# Get container process
+alias dkps="docker ps"
+
+# Get process included stop container
+alias dkpsa="docker ps -a"
+
+# Get images
+alias dki="docker images"
+
+# Get images, filter via grep
+dkif() { docker images | grep $1; }
+
+# Stop all containers
+dkstop() { docker stop $(docker ps -a -q); }
+
+# Remove all containers
+dkrm() { docker rm $(docker ps -a -q); }
+
+# Stop and Remove all containers
+alias dkrmf='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
+```
+
